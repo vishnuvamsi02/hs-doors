@@ -2734,27 +2734,6 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
 }
 
-.contact-trust-badges {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-  margin-top: 1.25rem;
-}
-
-.trust-badge-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  color: rgba(33, 33, 30, 0.75);
-  background-color: var(--color-ivory);
-  border: 1px solid var(--color-taupe);
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-}
-
 .customise-live-preview {
   background-color: var(--color-white);
   border: 2px solid var(--color-taupe);
