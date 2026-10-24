@@ -233,13 +233,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let displayCount;
     if (isProductsPage) {
       if (isMobile && !state.mobileProductsDoorsExpanded) {
-        displayCount = 3;
+        displayCount = 4;
       } else {
         displayCount = state.visibleCount;
       }
     } else {
-      // Home page preview: maximum 3 cards on mobile before expanding
-      displayCount = (isMobile && !state.homePreviewExpanded) ? 3 : 6;
+      // Home page preview: 4 items rendered on mobile (second card hidden via CSS leaves 3 visible)
+      displayCount = isMobile ? 4 : 6;
     }
 
     const visible = filtered.slice(0, displayCount);
