@@ -469,45 +469,86 @@ h1, h2, h3, h4, h5 {
 }
 
 .social-icon-btn {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-ivory);
+  color: #FFFFFF !important;
   transition: all var(--transition-fast);
+  border: none !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-.social-icon-btn:hover {
-  background-color: var(--color-gold);
-  color: var(--color-charcoal-deep);
-  border-color: var(--color-gold);
-  transform: translateY(-2px);
-}
-
-/* Specific Brand Colors for Social Icons */
-.social-icon-btn.yt-btn:hover {
-  background-color: var(--color-youtube);
-  border-color: var(--color-youtube);
-  color: #fff;
+/* Facebook: Authentic Facebook Blue */
+.social-icon-btn.fb-btn {
+  background-color: #1877F2 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
 }
 .social-icon-btn.fb-btn:hover {
-  background-color: var(--color-facebook);
-  border-color: var(--color-facebook);
-  color: #fff;
+  background-color: #0d65d9 !important;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 16px rgba(24, 119, 242, 0.5);
+}
+
+/* Instagram: Authentic Multi-Color Radial/Linear Gradient */
+.social-icon-btn.ig-btn {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(214, 36, 159, 0.35);
 }
 .social-icon-btn.ig-btn:hover {
-  background-color: var(--color-instagram);
-  border-color: var(--color-instagram);
-  color: #fff;
+  transform: translateY(-2px) scale(1.08);
+  filter: brightness(1.12);
+  box-shadow: 0 6px 16px rgba(214, 36, 159, 0.5);
+}
+
+/* YouTube: Authentic YouTube Red */
+.social-icon-btn.yt-btn {
+  background-color: #FF0000 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.35);
+}
+.social-icon-btn.yt-btn:hover {
+  background-color: #d90000 !important;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.5);
+}
+
+/* WhatsApp: Authentic WhatsApp Green */
+.social-icon-btn.wa-btn {
+  background-color: #25D366 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
 }
 .social-icon-btn.wa-btn:hover {
-  background-color: var(--color-whatsapp);
-  border-color: var(--color-whatsapp);
-  color: #fff;
+  background-color: #1ebe5d !important;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+.social-icon-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.social-icon-btn.ig-btn svg {
+  stroke: #FFFFFF !important;
+  fill: none !important;
+  stroke-width: 2 !important;
+}
+
+.social-icon-btn.fb-btn svg,
+.social-icon-btn.yt-btn svg,
+.social-icon-btn.wa-btn svg {
+  fill: #FFFFFF !important;
 }
 
 /* Site Header (Sticky Navigation) */
@@ -586,6 +627,29 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-gold-rich);
+}
+
+/* Responsive Header Text Classes (Prevents Mobile Text Overlap) */
+.btn-text-mobile {
+  display: none;
+}
+.sub-mobile {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .btn-text-desktop {
+    display: none !important;
+  }
+  .btn-text-mobile {
+    display: inline !important;
+  }
+  .sub-desktop {
+    display: none !important;
+  }
+  .sub-mobile {
+    display: inline !important;
+  }
 }
 
 /* Multi-Page Navigation */
@@ -693,7 +757,7 @@ h1, h2, h3, h4, h5 {
     justify-content: space-between !important;
     gap: 0.5rem !important;
   }
-  .brand-logo {
+  .site-header .brand-logo {
     display: flex !important;
     align-items: center !important;
     gap: 0.6rem !important;
@@ -701,7 +765,7 @@ h1, h2, h3, h4, h5 {
     flex-shrink: 1 !important;
     text-decoration: none !important;
   }
-  .brand-emblem {
+  .site-header .brand-emblem {
     width: 36px !important;
     height: 36px !important;
     min-width: 36px !important;
@@ -712,13 +776,13 @@ h1, h2, h3, h4, h5 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
     flex-shrink: 0 !important;
   }
-  .brand-text {
+  .site-header .brand-text {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     min-width: 0 !important;
   }
-  .brand-title {
+  .site-header .brand-title {
     font-size: 1.15rem !important;
     line-height: 1.1 !important;
     white-space: nowrap !important;
@@ -726,14 +790,18 @@ h1, h2, h3, h4, h5 {
     color: var(--color-charcoal) !important;
     font-weight: 700 !important;
   }
-  .brand-subtitle {
+  .site-header .brand-subtitle {
     font-size: 0.58rem !important;
-    letter-spacing: 0.08em !important;
+    letter-spacing: 0.06em !important;
     white-space: nowrap !important;
     text-transform: uppercase !important;
     color: var(--color-gold-rich) !important;
     font-weight: 700 !important;
     line-height: 1.2 !important;
+    max-width: 140px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
   }
   .header-actions {
     display: flex !important;
@@ -2927,6 +2995,56 @@ h1, h2, h3, h4, h5 {
   padding-top: clamp(3.5rem, 6vw, 5rem);
   padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
   border-top: 2px solid var(--color-gold);
+}
+
+/* Footer Brand Styling - High Contrast Pure White Visibility & Full Complete Subtitle */
+.site-footer .brand-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  text-decoration: none !important;
+  margin-bottom: 1rem !important;
+}
+
+.site-footer .brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+}
+
+.site-footer .brand-title {
+  color: #FFFFFF !important;
+  font-family: var(--font-serif) !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.15 !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.site-footer .brand-subtitle {
+  color: var(--color-gold-light) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  max-width: none !important;
+  width: auto !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  display: block !important;
+  line-height: 1.35 !important;
+}
+
+.site-footer .brand-emblem {
+  background: linear-gradient(135deg, #1A1A17 0%, #2E2E28 100%) !important;
+  border: 1.5px solid var(--color-gold) !important;
+  color: var(--color-gold) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 
 .site-footer .container {
